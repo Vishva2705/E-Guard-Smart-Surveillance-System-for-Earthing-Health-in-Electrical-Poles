@@ -1,0 +1,66 @@
+define BLYNK_PRINT Serial
+
+/* Fill in information from Blynk Device Info here */
+
+
+#define BLYNK_TEMPLATE_ID "TMPL3AYa1hq5Q"
+#define BLYNK_TEMPLATE_NAME "earth2025"
+#define BLYNK_AUTH_TOKEN "W0FhHo4bO03wYveUUb6nVGVuSiXra8sZ"
+
+#include <ESP8266WiFi.h>
+#include <BlynkSimpleEsp8266.h>
+
+// Your WiFi credentials.
+// Set password to "" for open networks.
+char ssid[] = "iot2025";
+char pass[] = "testing2025";
+
+
+int a=0;
+
+void setup()
+{
+  // Debug console
+  Serial.begin(9600);
+  pinMode(A0,INPUT);
+ 
+
+  pinMode(D5,OUTPUT);
+  pinMode(D6,OUTPUT);
+  digitalWrite(D5,1);
+  digitalWrite(D6,1);
+  Blynk.begin(BLYNK_AUTH_TOKEN, ssid, pass);
+ 
+}
+
+int post2;
+void loop()
+{
+
+post2 = analogRead(A0);
+Serial.println(post2);
+
+
+if (post2<100)
+{
+ Blynk.virtualWrite(V0,post2);
+ Serial.println("help");
+ Blynk.logEvent("alert","Earth leakeg");
+  delay(1000);
+   digitalWrite(D6,1);
+   digitalWrite(D5,0);
+ 
+}
+if (post2>400)
+{
+ Blynk.virtualWrite(V0,post2);
+ 
+  delay(1000);
+ digitalWrite(D6,0);
+ digitalWrite(D5,1);
+}
+
+  delay(1000);
+  Blynk.run();
+ 
+}
