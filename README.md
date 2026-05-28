@@ -109,19 +109,13 @@ The proposed system combines industrial electronics protection circuits and IoT-
 
 # Block Diagram
 
-![Block Diagram](block_diagram.jpg)
+![Block Diagram](block_diagram.png)
 
 ---
 
 # Circuit Diagram
 
-![Circuit Diagram](circuit_diagram.jpg)
-
----
-
-# Flow Diagram
-
-![Flow Diagram](flow_diagram.jpg)
+![Circuit Diagram](circuit_diagram.png)
 
 ---
 
@@ -129,11 +123,11 @@ The proposed system combines industrial electronics protection circuits and IoT-
 
 ## Hardware Setup
 
-![Hardware Setup](hardware_setup.jpg)
+![Hardware Setup](hardware_setup.png)
 
 ## Prototype Model
 
-![Prototype Model](prototype_model.jpg)
+![Prototype Model](prototype_model.png)
 
 ## Output Indication
 
